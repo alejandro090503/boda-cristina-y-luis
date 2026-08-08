@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="format-detection" content="telephone=no,date=no,address=no,email=no,url=no">
-<title>Cristina &amp; Luis · 3·X·MMXXVI</title>
+<title>Rocio &amp; Enrique · 3·X·MMXXVI</title>
 <meta name="description" content="Nos casamos y queremos que estés ahí. Una celebración en Almolonga, Gro. — 3 de Octubre de 2026">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://boda-cristina-y-luis.vercel.app/">
-<meta property="og:title" content="Cristina &amp; Luis · 3·X·MMXXVI">
+<meta property="og:title" content="Rocio &amp; Enrique · 3·X·MMXXVI">
 <meta property="og:description" content="Nos casamos y queremos que estés ahí. Almolonga, Gro. — 3 Octubre 2026">
 <meta property="og:image" content="https://boda-cristina-y-luis.vercel.app/og-image.jpg">
 <meta property="og:locale" content="es_MX">
@@ -28,14 +28,14 @@
   --bg:#FFFDF0;
   --surface:#F2EDD6;
   --paper:#FFFCEC;
-  --accent:#c8d4b8;
-  --accent-soft:#d8e2cc;
-  --accent-deep:#6d7848;
-  --gold:#bdb18f;
-  --gold-soft:#d4c8a6;
-  --gold-deep:#613704;
-  --ink:#392000;
-  --ink-soft:#7A5228;
+  --accent:#b5b99a;
+  --accent-soft:#cdd1b8;
+  --accent-deep:#5e6640;
+  --gold:#b09a6a;
+  --gold-soft:#c8b88e;
+  --gold-deep:#6B4F1C;
+  --ink:#2e2418;
+  --ink-soft:#6a5438;
   --hair:color-mix(in srgb,var(--accent-deep) 12%,transparent);
   --hair-gold:color-mix(in srgb,var(--gold) 28%,transparent);
   --display:'Cormorant Garamond',Georgia,serif;
@@ -58,7 +58,17 @@ body{
 /* ============ LAYOUT ============ */
 .wrap{max-width:440px;margin:0 auto;overflow:clip;position:relative;z-index:2;visibility:hidden}
 h1,h2,h3{font-family:var(--display);font-weight:600;letter-spacing:-.015em;line-height:1.12;color:var(--ink)}
-h1 em,h2 em,h3 em{font-style:italic;font-weight:600;color:var(--gold)}
+h1 em,h2 em,h3 em{font-style:italic;font-weight:600}
+h2 em,h3 em{
+  background-image:linear-gradient(100deg,
+    #6B4F1C 0%,#7A5C22 10%,#8A6A28 20%,#A8822F 27%,#C9A04E 32%,#A8822F 37%,
+    #9A7830 46%,#6B4F1C 58%,#8A6A28 70%,#B98F3C 80%,#7A5C22 90%,#6B4F1C 100%);
+  background-size:300% 100%;
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;color:transparent;
+  animation:goldSweep 5s linear infinite;
+  filter:drop-shadow(0 0 4px rgba(201,160,78,.35));
+}
 .script{font-family:var(--script);font-weight:400;font-size:1.5em;color:var(--gold-deep);letter-spacing:0}
 .italiana{font-family:var(--italiana);font-weight:400;letter-spacing:.02em}
 .eyebrow{
@@ -110,7 +120,7 @@ h1 em,h2 em,h3 em{font-style:italic;font-weight:600;color:var(--gold)}
 .hero-bg-wrap{position:absolute;inset:-10% -5%;z-index:-3;will-change:transform}
 .hero-bg{
   position:absolute;inset:0;width:100%;height:100%;
-  object-fit:cover;object-position:center 55%;
+  object-fit:cover;object-position:center 68%;
   transform:scale(1.12);
   filter:saturate(.9) contrast(1.05) brightness(.78);
 }
@@ -223,7 +233,12 @@ h1 em,h2 em,h3 em{font-style:italic;font-weight:600;color:var(--gold)}
 .verse-text{font-family:var(--display);font-style:italic;font-weight:500;font-size:clamp(19px,5vw,26px);line-height:1.6;color:var(--accent-deep);letter-spacing:-.01em;margin-bottom:40px;}
 .verse-text .word{display:inline-block}
 .verse-ref{font-family:var(--sans);font-size:11px;letter-spacing:.4em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:22px;display:block;font-weight:600}
-.verse-sig{font-family:var(--script);font-size:32px;color:var(--gold-deep);position:relative;display:inline-block;padding:0 28px;}
+.verse-sig{font-family:var(--script);font-size:32px;position:relative;display:inline-block;padding:0 28px;
+  background-image:linear-gradient(100deg,#6B4F1C 0%,#8A6A28 20%,#C9A04E 32%,#8A6A28 44%,#6B4F1C 58%,#B98F3C 80%,#6B4F1C 100%);
+  background-size:300% 100%;-webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;color:transparent;animation:goldSweep 6s linear infinite;
+  filter:drop-shadow(0 0 5px rgba(201,160,78,.4));
+}
 .verse-sig::before,.verse-sig::after{content:"";position:absolute;top:50%;width:20px;height:1px;background:var(--gold);}
 .verse-sig::before{left:-8px}
 .verse-sig::after{right:-8px}
@@ -453,7 +468,12 @@ h1 em,h2 em,h3 em{font-style:italic;font-weight:600;color:var(--gold)}
 footer{background:linear-gradient(175deg,#1A2816 0%,#2E3B2A 35%,#1E2A1A 65%,#141C12 100%);padding:min(14vh,110px) 28px min(10vh,80px);text-align:center;position:relative;overflow:hidden}
 footer::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 50% 40%,rgba(164,128,70,.06) 0%,transparent 70%);pointer-events:none}
 footer::after{content:'';position:absolute;top:0;left:10%;right:10%;height:1px;background:linear-gradient(to right,transparent,rgba(164,128,70,.3),rgba(200,176,138,.5),rgba(164,128,70,.3),transparent)}
-.footer-names{font-family:var(--display);font-style:italic;font-size:clamp(38px,10vw,60px);color:#F8F5EC;line-height:1.1;margin-bottom:16px;font-weight:500}
+.footer-names{font-family:var(--display);font-style:italic;font-size:clamp(38px,10vw,60px);line-height:1.1;margin-bottom:16px;font-weight:500;
+  background-image:linear-gradient(100deg,#8A6A28 0%,#C9A04E 20%,#E8C06A 35%,#C9A04E 50%,#8A6A28 65%,#C9A04E 80%,#8A6A28 100%);
+  background-size:300% 100%;-webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;color:transparent;animation:goldSweep 6s linear infinite;
+  filter:drop-shadow(0 0 8px rgba(232,192,106,.4));
+}
 .footer-names .amp{font-family:var(--script);color:#E8C06A;font-size:.8em;vertical-align:middle;padding:0 .1em}
 .footer-date{font-family:var(--sans);font-size:10px;letter-spacing:.5em;text-transform:uppercase;color:rgba(248,245,236,.55);padding-left:.5em;margin-bottom:32px;font-weight:500}
 .footer-hr{width:40px;height:1px;background:linear-gradient(to right,transparent,rgba(164,128,70,.35),transparent);margin:0 auto 16px;opacity:.5}
@@ -532,6 +552,22 @@ footer::after{content:'';position:absolute;top:0;left:10%;right:10%;height:1px;b
 /* ============ RV (reveal on scroll) ============ */
 .rv{visibility:hidden}
 
+/* ============ GOLD SHIMMER TEXT ============ */
+.gold-shimmer{
+  background-image:linear-gradient(100deg,
+    #6B4F1C 0%,#7A5C22 10%,#8A6A28 20%,#A8822F 27%,#C9A04E 32%,#A8822F 37%,
+    #9A7830 46%,#6B4F1C 58%,#8A6A28 70%,#B98F3C 80%,#7A5C22 90%,#6B4F1C 100%);
+  background-size:300% 100%;
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;color:transparent;
+  text-shadow:none;
+  animation:goldSweep 5s linear infinite;
+  filter:drop-shadow(0 0 5px rgba(201,160,78,.4)) drop-shadow(0 0 14px rgba(201,160,78,.2));
+  padding-left:.34em;padding-right:.34em;
+  margin-left:-.34em;margin-right:-.34em;
+}
+@keyframes goldSweep{0%{background-position:100% 50%}100%{background-position:-100% 50%}}
+
 /* ============ REDUCED MOTION ============ */
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}.hero-scroll::after{animation:none}}
 </style>
@@ -591,9 +627,9 @@ footer::after{content:'';position:absolute;top:0;left:10%;right:10%;height:1px;b
       </svg>
       <p class="hero-invitation" data-anim="hero-invitation">Una invitación a nuestra boda</p>
       <h1 class="hero-name">
-        <span class="hero-name-p" data-split="Luis Enrique"></span>
+        <span class="hero-name-p" data-split="Rocio"></span>
         <span class="hero-and">&amp;</span>
-        <span class="hero-name-l" data-split="Cristina"></span>
+        <span class="hero-name-l" data-split="Enrique"></span>
       </h1>
       <div class="hero-date" data-anim="hero-date">
         <span>Sábado</span><span class="sep">·</span><span>3 de Octubre</span><span class="sep">·</span><span>2026</span>
@@ -621,7 +657,7 @@ footer::after{content:'';position:absolute;top:0;left:10%;right:10%;height:1px;b
         </svg>
         <span class="verse-quote">&ldquo;</span>
         <p class="verse-text">Con la gracia de Dios y la bendición de nuestras familias, queremos compartir contigo el día en que unimos nuestras vidas para siempre.</p>
-        <span class="verse-ref">Luis Enrique &amp; Cristina</span>
+        <span class="verse-ref">Rocio &amp; Enrique</span>
         <span class="verse-sig">R &amp; E</span>
       </div>
     </div>
@@ -678,7 +714,7 @@ footer::after{content:'';position:absolute;top:0;left:10%;right:10%;height:1px;b
       <div class="familia-wrap rv" style="margin-top:32px">
         <div class="familia-card">
           <div class="familia-role">Padres de la Novia</div>
-          <div class="familia-names">Rocío Hernández Peralta</div>
+          <div class="familia-names">Rocio Hernández Peralta</div>
           <div class="fam-and-div"></div>
           <div class="familia-names">Antonio Sánchez Ensaldo</div>
           <div style="border-top:1px solid var(--hair-gold);margin:22px -10px 20px;opacity:.5"></div>
@@ -739,7 +775,7 @@ footer::after{content:'';position:absolute;top:0;left:10%;right:10%;height:1px;b
       <!-- Recepción -->
       <div class="loc-card rv">
         <div class="loc-type">Recepción &amp; Festejo</div>
-        <h3 style="font-family:var(--display);font-style:italic;font-size:clamp(22px,6vw,28px);color:var(--ink);margin-bottom:4px;font-weight:500">Por confirmar</h3>
+        <h3 style="font-family:var(--display);font-style:italic;font-size:clamp(22px,6vw,28px);color:var(--ink);margin-bottom:4px;font-weight:500">Cabaña &ldquo;El Capricho&rdquo;</h3>
         <p style="font-family:var(--serif);font-style:italic;font-size:14px;color:var(--ink-soft);margin-bottom:0">Almolonga, Guerrero</p>
         <div class="loc-schedule">
           <div class="loc-sched-item" style="border-bottom:none">
@@ -747,13 +783,21 @@ footer::after{content:'';position:absolute;top:0;left:10%;right:10%;height:1px;b
             <div class="loc-sched-time">2:00 p.m.</div>
           </div>
         </div>
-        <p style="font-family:var(--serif);font-style:italic;font-size:15px;color:var(--gold-deep);line-height:1.75;margin:0 0 12px;padding:14px 18px;background:rgba(164,128,70,.06);border-radius:8px;border:1px solid rgba(164,128,70,.15)">
-          <svg viewBox="0 0 24 24" width="14" height="14" fill="var(--gold)" style="vertical-align:-2px;margin-right:6px;opacity:.7"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
-          Ubicación por confirmar
-        </p>
+        <a href="https://maps.app.goo.gl/hEfAWBcQ6YBFsv9L8?g_st=aw" target="_blank" rel="noopener" class="loc-btn">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" style="flex-shrink:0"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          Cómo llegar
+        </a>
+        <iframe
+          class="loc-map"
+          src="https://maps.google.com/maps?q=17.634832,-99.294331&z=16&output=embed"
+          allowfullscreen
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Cabaña El Capricho, Almolonga"
+        ></iframe>
       </div>
 
-      <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Boda+Cristina+%26+Luis&dates=20261003T190000Z/20261004T010000Z&details=Ceremonia+Religiosa+1%3A00+PM+%7C+Recepci%C3%B3n+2%3A00+PM&location=Almolonga%2C+Guerrero" target="_blank" rel="noopener" class="loc-btn loc-btn-cal rv" style="margin-top:28px;max-width:380px">
+      <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Boda+Rocio+%26+Enrique&dates=20261003T190000Z/20261004T010000Z&details=Ceremonia+1%3A00+PM+Iglesia+Santa+Cruz+%7C+Recepci%C3%B3n+2%3A00+PM+Caba%C3%B1a+El+Capricho&location=Almolonga%2C+Guerrero" target="_blank" rel="noopener" class="loc-btn loc-btn-cal rv" style="margin-top:28px;max-width:380px">
         <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" style="flex-shrink:0"><path d="M19 3h-1V1h-2v2H8V1H6v2H5C3.89 4 3 4.9 3 6v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v10zM7 11h5v5H7z"/></svg>
         Guardar en Calendario
       </a>
@@ -761,41 +805,6 @@ footer::after{content:'';position:absolute;top:0;left:10%;right:10%;height:1px;b
   </section>
 
   <div class="seam" style="--from:var(--surface);--to:var(--bg)" aria-hidden="true"></div>
-
-  <!-- ════════════════ HOSPEDAJE ════════════════ -->
-  <section class="sec section-bg" style="text-align:center;overflow:hidden">
-    <div class="sec-flora" style="background-image:url('botanica1.webp');opacity:.12"></div>
-    <div class="sec-inner">
-      <div class="eyebrow rv">Para tu Estancia</div>
-      <h2 class="rv">Hospedaje <em>Recomendado</em></h2>
-      <p class="rv" style="font-family:var(--serif);font-style:italic;font-size:17px;color:var(--ink-soft);line-height:1.75;margin-bottom:8px">
-        Si vienes de fuera, te recomendamos estas opciones de hospedaje cercanas.
-      </p>
-
-      <div class="hosp-carousel rv">
-        <button class="hosp-arrow prev" aria-label="Anterior"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
-        <button class="hosp-arrow next" aria-label="Siguiente"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
-        <div class="hosp-viewport">
-          <div class="hosp-track" id="hospTrack">
-
-            <div class="hosp-slide">
-              <div class="hosp-photo" style="border-radius:50%;overflow:hidden;width:180px;height:180px;margin:0 auto 20px;border:2px solid rgba(164,128,70,.3);box-shadow:0 10px 30px rgba(57,32,0,.12)">
-                <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:var(--surface)">
-                  <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="var(--gold)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" style="opacity:.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-                </div>
-              </div>
-              <div style="font-family:var(--display);font-weight:600;font-size:21px;color:var(--ink);margin-bottom:6px">Pendiente por confirmar</div>
-              <div style="font-family:var(--sans);font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--gold-deep);opacity:.8;margin-bottom:16px">Almolonga, Guerrero</div>
-              <p style="font-family:var(--serif);font-style:italic;font-size:14px;color:var(--ink-soft);line-height:1.7;margin:0">Próximamente compartiremos opciones de hospedaje cercanas al evento.</p>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="seam" style="--from:var(--bg);--to:var(--bg)" aria-hidden="true"></div>
 
   <!-- ════════════════ ITINERARIO ════════════════ -->
   <section class="sec section-bg" style="text-align:center;overflow:hidden">
@@ -826,6 +835,7 @@ footer::after{content:'';position:absolute;top:0;left:10%;right:10%;height:1px;b
           <div class="itin-text itin-text--right">
             <span class="itin-time">2:00 p.m.</span>
             <div class="itin-ev">Recepción</div>
+            <div style="font-family:var(--serif);font-size:13px;color:var(--ink-soft);font-style:italic;margin-top:2px">Cabaña &ldquo;El Capricho&rdquo;</div>
           </div>
         </div>
 
@@ -859,6 +869,41 @@ footer::after{content:'';position:absolute;top:0;left:10%;right:10%;height:1px;b
           </div>
         </div>
 
+      </div>
+    </div>
+  </section>
+
+  <div class="seam" style="--from:var(--bg);--to:var(--bg)" aria-hidden="true"></div>
+
+  <!-- ════════════════ HOSPEDAJE ════════════════ -->
+  <section class="sec section-bg" style="text-align:center;overflow:hidden">
+    <div class="sec-flora" style="background-image:url('botanica1.webp');opacity:.12"></div>
+    <div class="sec-inner">
+      <div class="eyebrow rv">Para tu Estancia</div>
+      <h2 class="rv">Hospedaje <em>Recomendado</em></h2>
+      <p class="rv" style="font-family:var(--serif);font-style:italic;font-size:17px;color:var(--ink-soft);line-height:1.75;margin-bottom:8px">
+        Si vienes de fuera, te recomendamos estas opciones de hospedaje cercanas.
+      </p>
+
+      <div class="hosp-carousel rv">
+        <button class="hosp-arrow prev" aria-label="Anterior"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
+        <button class="hosp-arrow next" aria-label="Siguiente"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
+        <div class="hosp-viewport">
+          <div class="hosp-track" id="hospTrack">
+
+            <div class="hosp-slide">
+              <div class="hosp-photo" style="border-radius:50%;overflow:hidden;width:180px;height:180px;margin:0 auto 20px;border:2px solid rgba(164,128,70,.3);box-shadow:0 10px 30px rgba(57,32,0,.12)">
+                <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:var(--surface)">
+                  <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="var(--gold)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" style="opacity:.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                </div>
+              </div>
+              <div style="font-family:var(--display);font-weight:600;font-size:21px;color:var(--ink);margin-bottom:6px">Pendiente por confirmar</div>
+              <div style="font-family:var(--sans);font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--gold-deep);opacity:.8;margin-bottom:16px">Almolonga, Guerrero</div>
+              <p style="font-family:var(--serif);font-style:italic;font-size:14px;color:var(--ink-soft);line-height:1.7;margin:0">Próximamente compartiremos opciones de hospedaje cercanas al evento.</p>
+            </div>
+
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -932,11 +977,11 @@ footer::after{content:'';position:absolute;top:0;left:10%;right:10%;height:1px;b
       <div class="rv" style="margin-bottom:36px">
         <div class="swatch-group-title">Paleta Sugerida</div>
         <div class="dress-swatches">
-          <div class="swatch"><div class="swatch-c" style="background:#694c16"></div><div class="swatch-n">Camel</div></div>
-          <div class="swatch"><div class="swatch-c" style="background:#610e0c"></div><div class="swatch-n">Vino</div></div>
-          <div class="swatch"><div class="swatch-c" style="background:#83855f"></div><div class="swatch-n">Olivo</div></div>
-          <div class="swatch"><div class="swatch-c" style="background:#1a1738"></div><div class="swatch-n">Marino</div></div>
-          <div class="swatch"><div class="swatch-c" style="background:#b85325"></div><div class="swatch-n">Terracota</div></div>
+          <div class="swatch"><div class="swatch-c" style="background:#7a8060;box-shadow:inset 0 -6px 16px rgba(0,0,0,.12),0 1px 2px rgba(57,32,0,.04),0 6px 16px -6px rgba(57,32,0,.14)"></div><div class="swatch-n">Olivo</div></div>
+          <div class="swatch"><div class="swatch-c" style="background:#2c3e5a;box-shadow:inset 0 -6px 16px rgba(0,0,0,.12),0 1px 2px rgba(57,32,0,.04),0 6px 16px -6px rgba(57,32,0,.14)"></div><div class="swatch-n">Marino</div></div>
+          <div class="swatch"><div class="swatch-c" style="background:#a0674b;box-shadow:inset 0 -6px 16px rgba(0,0,0,.12),0 1px 2px rgba(57,32,0,.04),0 6px 16px -6px rgba(57,32,0,.14)"></div><div class="swatch-n">Terracota</div></div>
+          <div class="swatch"><div class="swatch-c" style="background:#6b5040;box-shadow:inset 0 -6px 16px rgba(0,0,0,.12),0 1px 2px rgba(57,32,0,.04),0 6px 16px -6px rgba(57,32,0,.14)"></div><div class="swatch-n">Marrón</div></div>
+          <div class="swatch"><div class="swatch-c" style="background:#6e2c3a;box-shadow:inset 0 -6px 16px rgba(0,0,0,.12),0 1px 2px rgba(57,32,0,.04),0 6px 16px -6px rgba(57,32,0,.14)"></div><div class="swatch-n">Bordó</div></div>
         </div>
       </div>
 
@@ -957,18 +1002,18 @@ footer::after{content:'';position:absolute;top:0;left:10%;right:10%;height:1px;b
     <div class="gallery-head rv">
       <div class="eyebrow">Nosotros</div>
       <h2>Nuestra <em>Historia</em></h2>
-      <div class="gallery-sub">Luis Enrique &amp; Cristina</div>
+      <div class="gallery-sub">Rocio &amp; Enrique</div>
     </div>
     <div class="wheel-scene rv" id="wheel-scene">
       <div class="wheel-ring" id="wheel-ring">
-        <div class="wheel-card"><img src="g01.jpg" alt="Cristina &amp; Luis Enrique" loading="lazy"></div>
-        <div class="wheel-card"><img src="g02.jpg" alt="Cristina &amp; Luis Enrique" loading="lazy"></div>
-        <div class="wheel-card"><img src="g03.jpg" alt="Cristina &amp; Luis Enrique" loading="lazy"></div>
-        <div class="wheel-card"><img src="g04.jpg" alt="Cristina &amp; Luis Enrique" loading="lazy"></div>
-        <div class="wheel-card"><img src="g05.jpg" alt="Cristina &amp; Luis Enrique" loading="lazy"></div>
-        <div class="wheel-card"><img src="g06.jpg" alt="Cristina &amp; Luis Enrique" loading="lazy"></div>
-        <div class="wheel-card"><img src="g07.jpg" alt="Cristina &amp; Luis Enrique" loading="lazy"></div>
-        <div class="wheel-card"><img src="g10.jpg" alt="Cristina &amp; Luis Enrique" loading="lazy"></div>
+        <div class="wheel-card"><img src="g01.jpg" alt="Rocio &amp; Enrique" loading="lazy"></div>
+        <div class="wheel-card"><img src="g02.jpg" alt="Rocio &amp; Enrique" loading="lazy"></div>
+        <div class="wheel-card"><img src="g03.jpg" alt="Rocio &amp; Enrique" loading="lazy"></div>
+        <div class="wheel-card"><img src="g04.jpg" alt="Rocio &amp; Enrique" loading="lazy"></div>
+        <div class="wheel-card"><img src="g05.jpg" alt="Rocio &amp; Enrique" loading="lazy"></div>
+        <div class="wheel-card"><img src="g06.jpg" alt="Rocio &amp; Enrique" loading="lazy"></div>
+        <div class="wheel-card"><img src="g07.jpg" alt="Rocio &amp; Enrique" loading="lazy"></div>
+        <div class="wheel-card"><img src="g10.jpg" alt="Rocio &amp; Enrique" loading="lazy"></div>
       </div>
     </div>
     <p class="gal-hint rv">arrastra para girar</p>
@@ -1025,7 +1070,7 @@ footer::after{content:'';position:absolute;top:0;left:10%;right:10%;height:1px;b
               <rect x="20" y="28" width="12" height="2.5" rx="1.25" fill="currentColor" stroke="none" opacity=".4"/>
             </svg>
             <p class="env-title">Lluvia de Sobres</p>
-            <p class="env-desc">En la celebración habrá una mesa especial para tus sobres. ¡Gracias por tu cariño!</p>
+            <p class="env-desc">La lluvia de sobres es una tradición en la que los invitados entregan un sobre con un regalo monetario a los novios como muestra de cariño y buenos deseos. En la celebración habrá una mesa especial para depositarlos. ¡Gracias por tu generosidad!</p>
           </div>
         </button>
         <p class="env-tap-hint">Toca el sobre</p>
@@ -1033,34 +1078,7 @@ footer::after{content:'';position:absolute;top:0;left:10%;right:10%;height:1px;b
     </div>
   </section>
 
-  <div class="seam" style="--from:var(--bg);--to:#1A2816" aria-hidden="true"></div>
-
-  <!-- ════════════════ ÁLBUM COMPARTIDO ════════════════ -->
-  <section class="sec sec-dark" style="text-align:center;overflow:hidden">
-    <div class="sec-inner">
-      <div class="eyebrow">Comparte el Momento</div>
-      <h2 style="font-size:clamp(28px,7vw,44px)">Álbum <em>Compartido</em></h2>
-      <div class="album-icon-wrap rv">
-        <svg viewBox="0 0 64 50" width="64" height="50" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <rect x="2" y="12" width="60" height="36" rx="4" fill="rgba(200,176,138,.07)" stroke="#C8B08A" stroke-width="1.2"/>
-          <rect x="20" y="6" width="14" height="8" rx="2" fill="rgba(200,176,138,.07)" stroke="#C8B08A" stroke-width="1.1"/>
-          <circle cx="32" cy="30" r="13" fill="rgba(200,176,138,.06)" stroke="#C8B08A" stroke-width="1.2"/>
-          <circle cx="32" cy="30" r="8.5" fill="rgba(164,128,70,.07)" stroke="#A48046" stroke-width="1" opacity=".75"/>
-          <circle cx="32" cy="30" r="3.5" fill="rgba(164,128,70,.18)" stroke="#A48046" stroke-width=".7" opacity=".6"/>
-          <circle cx="53" cy="20" r="3.5" fill="rgba(200,176,138,.1)" stroke="#C8B08A" stroke-width=".9"/>
-        </svg>
-      </div>
-      <p class="gift-msg-dark rv">Comparte tus fotos y videos del día en nuestro álbum compartido. Será el recuerdo colectivo de este momento tan especial.</p>
-      <!-- PENDIENTE CLIENTE: link álbum compartido (Google Drive / iCloud) y QR -->
-      <a href="#" target="_blank" rel="noopener" class="gift-btn rv">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" style="flex-shrink:0"><path d="M19 7v2.99s-1.99.01-2 0V7h-3s.01-1.99 0-2h3V2h2v3h3v2h-3zm-3 4V8h-3V5H5c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2v-8h-3zM5 19l3-4 2 3 3-4 4 5H5z"/></svg>
-        Subir Fotos al Álbum
-      </a>
-      <p style="font-family:var(--italiana);font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:rgba(200,176,138,.38);margin-top:16px">Disponible próximamente</p>
-    </div>
-  </section>
-
-  <div class="seam" style="--from:#1A2816;--to:var(--bg)" aria-hidden="true"></div>
+  <div class="seam" style="--from:var(--bg);--to:var(--bg)" aria-hidden="true"></div>
 
   <!-- ════════════════ RSVP ════════════════ -->
   <section class="sec section-bg" style="text-align:center;overflow:hidden">
@@ -1128,7 +1146,7 @@ footer::after{content:'';position:absolute;top:0;left:10%;right:10%;height:1px;b
 
   <!-- ════════════════ FOOTER ════════════════ -->
   <footer>
-    <div class="footer-names rv">Luis Enrique <span class="amp">&amp;</span> Cristina</div>
+    <div class="footer-names rv">Rocio <span class="amp">&amp;</span> Enrique</div>
     <div class="footer-date rv">3 · Octubre · 2026 · Almolonga, Gro.</div>
     <div class="footer-hr"></div>
     <a href="https://www.instagram.com/elysium.invitaciones" target="_blank" rel="noopener" class="footer-credit rv">Diseño · @elysium.invitaciones</a>
